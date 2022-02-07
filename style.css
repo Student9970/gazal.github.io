@@ -1,0 +1,447 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--white);
+    /* background-image: var(--page-bg); */
+    /* font-family: 'Cinzel Decorative', cursive; */
+    /* font-family: 'Maven Pro', sans-serif; */
+    /* font-family: 'Parisienne', cursive; */
+    /* font-family: 'Sedgwick Ave', cursive; */
+    overflow-x: hidden !important;
+}
+
+:root {
+    --page-bg: linear-gradient(43deg, #4158D0 0%, #C850C0 66%, #FFCC70 100%);
+    --btn-bg: linear-gradient(43deg, #6241d0 0%, #ec41e1 100%);
+    --font-color: rgb(0, 0, 0);
+    /*========== Font and typography ==========*/
+    --body-font: 'Roboto', sans-serif;
+    --biggest-font-size: 4rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-bold: 700;
+    /*========== Margenes Bottom ==========*/
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    /*========== TEXT ==========*/
+    --text-light: #707070;
+}
+
+
+/* ----------------------------- SCROLL BAR ----------------------------- */
+
+::-webkit-scrollbar {
+    display: block;
+    width: 10px !important;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--grey);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--orange);
+    position: absolute;
+    border-radius: 100px;
+    width: 1px !important;
+}
+
+
+/* ----------------------------- RESUABLE CSS ----------------------------- */
+
+.g-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* ----------------------------- NAVBAR ----------------------------- */
+
+.g-navbar {
+    height: 60px;
+    backdrop-filter: blur(10px);
+}
+
+.g-navbar ul {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.g-navbar ul li a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--black);
+}
+
+.g-navbar ul li a:hover {
+    color: var(--orange);
+}
+
+
+/* ----------------------------- MOBILE NAVBAR ----------------------------- */
+
+.g-sm-navbar {
+    background-color: var(--white);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    height: 25vh;
+    box-shadow: 0 -5px 10px var(--grey);
+}
+
+.g-sm-navbar h1 {
+    color: var(--black);
+}
+
+#m-nav {
+    transform: translateY(110%);
+}
+
+.g-m-nav li {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.g-m-nav li a {
+    color: var(--black);
+}
+
+.g-sm-main-navbar {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    box-shadow: 0 -3px 10px var(--grey);
+    background-color: var(--white);
+}
+
+.g-sm-main-navbar h1 {
+    color: var(--black);
+}
+
+#close {
+    color: var(--orange);
+}
+
+#hamburger {
+    color: var(--orange);
+}
+
+
+/* ----------------------------- INTRO ----------------------------- */
+
+.height {
+    height: 100vh;
+}
+
+.width {
+    width: 100vw;
+}
+
+.intro-1 h1 {
+    font-size: var(--biggest-font-size);
+    color: var(--black);
+    font-weight: var(--font-bold);
+}
+
+.intro-1 h1 span {
+    letter-spacing: 10px;
+    color: var(--orange);
+    /* text-shadow: 0 0px 15px #b7ffe6; */
+}
+
+.intro-1 p {
+    color: var(--text-light);
+    font-weight: lighter;
+}
+
+.intro-1 .title {
+    font-weight: bold;
+    color: var(--black);
+    font-size: var(--h1-font-size);
+}
+
+.contact-button {
+    background: var(--grey);
+    color: var(--black);
+    border-radius: 100px;
+    text-decoration: none;
+    transition: 0.2s;
+    border: none;
+}
+
+.contact-button:hover {
+    color: var(--black);
+    font-weight: var(--font-bold);
+    transition: 0.2s;
+    background-color: var(--dark-grey);
+}
+
+.contact-button:hover .arrow {
+    transform: translateX(5px);
+    transition: 0.2s;
+}
+
+
+/* ----------------------------- JOURNEY ----------------------------- */
+
+.journey {
+    overflow: visible !important;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 100px;
+    background-color: var(--black);
+    transform: translateY(-5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dot::after {
+    content: "";
+    height: 1px;
+    width: 100vw;
+    margin: 0 auto !important;
+    background-color: var(--black);
+    position: absolute;
+}
+
+.journey h1 {
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: bolder;
+}
+
+.journey h4 {
+    font-size: 25px;
+    letter-spacing: 2px;
+    font-weight: bolder;
+    color: var(--black);
+}
+
+.journey h6 {
+    font-weight: 400;
+    color: var(--black);
+}
+
+.qualification-text {
+    color: var(--orange) !important;
+}
+
+.qualification-para {
+    color: var(--black);
+}
+
+.cal {
+    font-weight: lighter;
+    color: var(--text-light);
+}
+
+
+/* ----------------------------- SKILLS ----------------------------- */
+
+.box {
+    height: 300px;
+    width: 80%;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 1px 8px var(--grey);
+    transition: 0.5s;
+    cursor: default;
+}
+
+.box h3 {
+    color: var(--black) !important;
+}
+
+.box ul li {
+    font-weight: lighter;
+    color: var(--black) !important;
+}
+
+.box:hover {
+    box-shadow: 0 5px 10px var(--grey);
+    transition: 0.5s;
+}
+
+.sk {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.sk li {
+    padding: 3px 0;
+}
+
+.skill-icons {
+    color: var(--orange);
+}
+
+
+/* ----------------------------- WORK ----------------------------- */
+
+.main-title {
+    color: var(--black);
+    font-size: 3.5vw;
+    font-weight: bolder !important;
+    letter-spacing: 10px !important;
+}
+
+.woman-working {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#work {
+    padding: 0 0 !important;
+}
+
+.work-title h2 {
+    color: var(--orange);
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+
+.work-title h5 {
+    color: var(--black);
+    font-weight: lighter !important;
+    letter-spacing: 0.5px;
+}
+
+ul .work-link {
+    list-style: square;
+    color: var(--black);
+    margin: 8px 0;
+}
+
+.skills {
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: var(--black);
+    transition: 0.5s;
+}
+
+.skills:hover {
+    letter-spacing: 4px;
+    transition: 0.5s;
+    color: var(--black);
+}
+
+
+/* ----------------------------- CONTACT ----------------------------- */
+
+input,
+textarea {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    color: var(--black) !important;
+}
+
+.g-form-group {
+    background-color: var(--grey);
+    border-radius: 15px;
+    margin-left: 2px;
+    color: var(--blue);
+}
+
+.social li {
+    list-style: none;
+}
+
+.social li a {
+    color: var(--white);
+    font-size: 30px !important;
+}
+
+.contact-icon {
+    color: var(--text-light)
+}
+
+.contact-linkss {
+    color: var(--black);
+    text-decoration: none;
+}
+
+.contact-linkss:hover {
+    color: var(--black);
+    text-decoration: underline;
+}
+
+.contact-icons {
+    color: var(--blue) !important;
+}
+
+
+/* ----------------------------- FOOTER ----------------------------- */
+
+.footer {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--grey);
+    color: var(--black);
+}
+
+.social li a {
+    color: var(--black);
+}
+
+.social li a:hover {
+    color: var(--orange);
+}
+
+
+/* ----------------------------- RESPONSIVE ----------------------------- */
+
+@media screen and (max-width: 1180px) {
+    body {
+        overflow-x: hidden !important;
+    }
+    .box {
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    body {
+        overflow-x: hidden !important;
+    }
+    #skills,
+    #work,
+    #contact {
+        height: auto !important;
+    }
+}
